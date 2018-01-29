@@ -14,8 +14,6 @@ platforms:
     image: alpine:3.6
   - name: phpmyadmin-alpine-3.7
     image: alpine:3.7
-  - name: phpmyadmin-centos-6
-    image: centos:6
   - name: phpmyadmin-centos-7
     image: centos:7
   - name: phpmyadmin-debian-buster
@@ -40,9 +38,6 @@ platforms:
     image: opensuse:42.2
   - name: phpmyadmin-opensuse-42.3
     image: opensuse:42.3
-    # 14.04 LTS
-  - name: phpmyadmin-ubuntu-trusty
-    image: ubuntu:trusty
     # 16.04 LTS
   - name: phpmyadmin-ubuntu-xenial
     image: ubuntu:xenial
