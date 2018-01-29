@@ -1,0 +1,7 @@
+---
+# tasks file for phpmyadmin
+- name: download & install software
+  unarchive:
+    src: phpmyadmin_targz
+    dest: "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin"
+    remove_src: yes

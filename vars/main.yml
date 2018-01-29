@@ -1,0 +1,12 @@
+---
+# vars file for phpmyadmin
+phpmyadmin_targz: https://files.phpmyadmin.net/phpMyAdmin/{{ phpmyadmin_version }}/phpMyAdmin-{{ phpmyadmin_version }}-all-languages.zip
+
+phpmyadmin_httpd_directory:
+  Alpine: /unknown
+  Archlinux: /unknown
+  CentOS: /var/www/html
+  Debian: /unknown
+  Fedora: /var/www/html
+  openSUSE Leap: /unknown
+  Ubuntu: /unknown
