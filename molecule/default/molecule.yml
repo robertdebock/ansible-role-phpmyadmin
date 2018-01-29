@@ -26,8 +26,6 @@ platforms:
     image: debian:sid
   - name: phpmyadmin-debian-stretch
     image: debian:stretch
-  - name: phpmyadmin-debian-wheezy
-    image: debian:wheezy
   - name: phpmyadmin-fedora-23
     image: fedora:23
   - name: phpmyadmin-fedora-24
