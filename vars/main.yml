@@ -3,28 +3,28 @@
 phpmyadmin_targz: https://files.phpmyadmin.net/phpMyAdmin/{{ phpmyadmin_version }}/phpMyAdmin-{{ phpmyadmin_version }}-all-languages.zip
 
 phpmyadmin_httpd_directory:
-  Alpine: /unknown
-  Archlinux: /unknown
+  Alpine: /var/www/localhost/htdocs
+  Archlinux: /srv/http
   CentOS: /var/www/html
-  Debian: /unknown
+  Debian: /var/www/html
   Fedora: /var/www/html
-  openSUSE Leap: /unknown
-  Ubuntu: /unknown
+  openSUSE Leap: /srv/www/htdocs
+  Ubuntu: /var/www/html
 
 phpmyadmin_httpd_user:
-  Alpine: unknown
-  Archlinux: unknown
-  CentOS: httpd
-  Debian: unknown
-  Fedora: httpd
-  openSUSE Leap: unknown
-  Ubuntu: unknown
+  Alpine: apache
+  Archlinux: http
+  CentOS: apache
+  Debian: www-data
+  Fedora: apache
+  openSUSE Leap: wwwrun
+  Ubuntu: www-data
 
 phpmyadmin_httpd_group:
-  Alpine: unknown
-  Archlinux: unknown
-  CentOS: httpd
-  Debian: unknown
-  Fedora: httpd
-  openSUSE Leap: unknown
-  Ubuntu: unknown
+  Alpine: apache
+  Archlinux: http
+  CentOS: apache
+  Debian: www-data
+  Fedora: apache
+  openSUSE Leap: www
+  Ubuntu: www-data
