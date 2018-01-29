@@ -10,3 +10,21 @@ phpmyadmin_httpd_directory:
   Fedora: /var/www/html
   openSUSE Leap: /unknown
   Ubuntu: /unknown
+
+phpmyadmin_httpd_user:
+  Alpine: unknown
+  Archlinux: unknown
+  CentOS: httpd
+  Debian: unknown
+  Fedora: httpd
+  openSUSE Leap: unknown
+  Ubuntu: unknown
+
+phpmyadmin_httpd_group:
+  Alpine: unknown
+  Archlinux: unknown
+  CentOS: httpd
+  Debian: unknown
+  Fedora: httpd
+  openSUSE Leap: unknown
+  Ubuntu: unknown

@@ -1,5 +1,13 @@
 ---
 # tasks file for phpmyadmin
+- name: create phpmyadmin directory
+  file:
+    path: "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin"
+    state: directory
+    owner: "{{ phpmyadmin_httpd_user[ansible_distribution] }}"
+    group: "{{ phpmyadmin_httpd_group[ansible_distribution] }}"
+    mode: 0750
+
 - name: download & install software
   unarchive:
     src: "{{ phpmyadmin_targz }}"
