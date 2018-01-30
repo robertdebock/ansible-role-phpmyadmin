@@ -9,17 +9,17 @@
     mode: 0750
   with_items:
     - "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin"
-    - /tmp/phpmyadmin
+    - "{{ phpmyadmin_tmp_directory }}"
 
-- name: donwload and unpack software
+- name: download and unpack software
   unarchive:
     src: "{{ phpmyadmin_targz }}"
-    dest: /tmp/phpmyadmin
+    dest: "{{ phpmyadmin_tmp_directory }}"
     remote_src: yes
 
 - name: install software
   copy:
-    src: /tmp/phpmyadmin/?/*
+    src: "{{ phpmyadmin_tmp_directory }}"/?/*
     dest: "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin"
     remote_src: yes
 
