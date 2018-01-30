@@ -14,7 +14,7 @@
     dest: "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin"
     remote_src: yes
     mode: 0755
-    extra_opts: [--strip 1]
+    extra_opts: [-j]
 
 - name: configure software
   template:
