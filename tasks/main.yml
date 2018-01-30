@@ -8,18 +8,26 @@
     group: "{{ phpmyadmin_httpd_group[ansible_distribution] }}"
     mode: 0750
 
-- name: download & install software
+- name: download software
+  get_url:
+    url: "{{ phpmyadmin_targz }}"
+    dest: /tmp/phpmyadmin.zip
+
+- name: unpack software
   unarchive:
-    src: "{{ phpmyadmin_targz }}"
+    src: /tmp/phpmyadmin.zip
+    dest: /tmp/phpmyadmin
+
+- name: install software
+  copy:
+    src: /tmp/phpmyadmin/?/*
     dest: "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin"
     remote_src: yes
-    mode: 0755
-    extra_opts: [-j]
 
 - name: configure software
   template:
     src: templates/config.inc.php.j2
-    dest: "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin"
+    dest: "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin/config.inc.php"
     owner: "{{ phpmyadmin_httpd_user[ansible_distribution] }}"
     group: "{{ phpmyadmin_httpd_group[ansible_distribution] }}"
     mode: 0640
