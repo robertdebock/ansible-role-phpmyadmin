@@ -1,3 +1,17 @@
 ---
 # defaults file for phpmyadmin
 phpmyadmin_version: 4.7.7
+
+phpmyadmin_database_host: localhost
+
+# To authenticate to the database using a user/pass requested in the browser,
+# ensure you set phpmyadmin_blowfish_secret.
+phpmyadmin_blowfish_secret: x7GD9DBEE32bAWd2sTHKBfYiqOfnj82neaPD3wrDTs0K
+
+# Only set these (and unset phpmyadmin_blowfish_secret) to save the login
+# credentials in the configuration file.
+phpmyadmin_database_user: root
+phpmyadmin_database_pass: root
+
+phpmyadmin_database_compress: false
+phpmyadmin_database_allownopassword: false

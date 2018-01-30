@@ -14,3 +14,12 @@
     dest: "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin"
     remote_src: yes
     mode: 0755
+    extra_opts: [--strip-components=1]
+
+- name: configure software
+  template:
+    src: templates/config.inc.php.j2
+    dest: "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin"
+    owner: "{{ phpmyadmin_httpd_user[ansible_distribution] }}"
+    group: "{{ phpmyadmin_httpd_group[ansible_distribution] }}"
+    mode: 0640
