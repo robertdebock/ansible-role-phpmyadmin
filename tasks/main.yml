@@ -1,22 +1,21 @@
 ---
 # tasks file for phpmyadmin
-- name: create phpmyadmin directory
+- name: create directories
   file:
     path: "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin"
     state: directory
     owner: "{{ phpmyadmin_httpd_user[ansible_distribution] }}"
     group: "{{ phpmyadmin_httpd_group[ansible_distribution] }}"
     mode: 0750
+  with_items:
+    - "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin"
+    - /tmp/phpmyadmin
 
-- name: download software
-  get_url:
-    url: "{{ phpmyadmin_targz }}"
-    dest: /tmp/phpmyadmin.zip
-
-- name: unpack software
+- name: donwload and unpack software
   unarchive:
-    src: /tmp/phpmyadmin.zip
+    src: "{{ phpmyadmin_targz }}"
     dest: /tmp/phpmyadmin
+    remote_src: yes
 
 - name: install software
   copy:
