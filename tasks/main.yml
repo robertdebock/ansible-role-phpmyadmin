@@ -13,3 +13,4 @@
     src: "{{ phpmyadmin_targz }}"
     dest: "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin"
     remote_src: yes
+    mode: 0755
