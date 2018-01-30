@@ -18,7 +18,7 @@
     remote_src: yes
 
 - name: install software
-  command: mv "{{ phpmyadmin_tmp_directory }}/{{ phpmyadmin_unpack_directory }}/*" "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin"
+  command: mv {{ phpmyadmin_tmp_directory }}/{{ phpmyadmin_unpack_directory }}/* {{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin
   args:
     removes: "{{ phpmyadmin_tmp_directory }}/{{ phpmyadmin_unpack_directory }}/README"
 
