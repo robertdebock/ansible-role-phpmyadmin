@@ -8,7 +8,6 @@
     group: "{{ phpmyadmin_httpd_group[ansible_distribution] }}"
     mode: 0750
   with_items:
-    - "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin"
     - "{{ phpmyadmin_tmp_directory }}"
 
 - name: download and unpack software
@@ -18,7 +17,7 @@
     remote_src: yes
 
 - name: install software
-  command: mv {{ phpmyadmin_tmp_directory }}/{{ phpmyadmin_unpack_directory }}/* {{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin
+  command: mv {{ phpmyadmin_tmp_directory }}/{{ phpmyadmin_unpack_directory }} {{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin
   args:
     removes: "{{ phpmyadmin_tmp_directory }}/{{ phpmyadmin_unpack_directory }}/README"
 
