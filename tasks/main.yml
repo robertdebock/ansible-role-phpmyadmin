@@ -19,7 +19,7 @@
 
 - name: install software
   copy:
-    src: "{{ phpmyadmin_tmp_directory }}"/?/*
+    src: "{{ phpmyadmin_tmp_directory }}/?/*"
     dest: "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin"
     remote_src: yes
 
