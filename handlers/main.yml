@@ -1,4 +1,2 @@
 ---
 # handlers file for phpmyadmin
-- name: install software
-  command: cp -Rip {{ phpmyadmin_tmp_directory }}/{{ phpmyadmin_unpack_directory }}/* {{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin/

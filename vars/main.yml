@@ -1,7 +1,6 @@
 ---
 # vars file for phpmyadmin
-phpmyadmin_zip: https://files.phpmyadmin.net/phpMyAdmin/{{ phpmyadmin_version }}/phpMyAdmin-{{ phpmyadmin_version }}-all-languages.zip
-phpmyadmin_unpack_directory: "phpMyAdmin-{{ phpmyadmin_version }}-all-languages"
+phpmyadmin_archive: https://files.phpmyadmin.net/phpMyAdmin/{{ phpmyadmin_version }}/phpMyAdmin-{{ phpmyadmin_version }}-all-languages.tar.gz
 
 phpmyadmin_httpd_directory:
   Alpine: /var/www/localhost/htdocs
