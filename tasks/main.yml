@@ -15,11 +15,8 @@
     src: "{{ phpmyadmin_zip }}"
     dest: "{{ phpmyadmin_tmp_directory }}"
     remote_src: yes
-
-- name: install software
-  command: cp -Rip {{ phpmyadmin_tmp_directory }}/{{ phpmyadmin_unpack_directory }}/* {{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin/
-  args:
-    creates: "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin/README"
+  notify:
+    - install software
 
 - name: configure software
   template:
