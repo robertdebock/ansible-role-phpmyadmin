@@ -30,10 +30,39 @@ phpmyadmin_httpd_group:
   Ubuntu: www-data
 
 phpmyadmin_requirements:
-  default:
+  ArchLinux:
+    - php-mbstring
+    - php-mysql
+    - php-zip
+  Alpine:
+    - php7-mbstring
+    - php7-pdo_mysql
+    - php7-zip
+  CentOS-6:
+    - php-mysql
+    - php-mbstring
+  CentOS-7:
     - php-mysql
     - php-mbstring
     - php-pecl-zip
+  Debian:
+    - php-mysql
+    - php-mbstring
+    - php-zip
+  Fedora:
+    - php-mysql
+    - php-mbstring
+    - php-pecl-zip
+  OpenSUSE Leap:
+    - php5-mysql
+    - php5-mbstring
+    - php5-zip
+  Ubuntu:
+    - php-mysql
+    - php-mbstring
+    - php-zip
+
+
 
 phpmyadmin_httpd_conf_directory:
   Alpine: /etc/apache2/conf.d

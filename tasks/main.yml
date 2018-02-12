@@ -34,6 +34,6 @@
 - name: configure httpd
   template:
     src: templates/phpmyadmin.conf.j2
-    dest: "{{ phpnmyadmin_httpd_conf_directory[ansible_distribution] }}/phpmyadmin.conf"
+    dest: "{{ phpmyadmin_httpd_conf_directory[ansible_distribution] }}/phpmyadmin.conf"
   notify:
     - restart httpd
