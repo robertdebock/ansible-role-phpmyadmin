@@ -28,8 +28,7 @@ phpmyadmin_httpd_group:
   Fedora: apache
   openSUSE Leap: www
   Ubuntu: www-data
----
-# vars file for mysql
+
 phpmyadmin_requirements:
   default:
     - php-mysql
