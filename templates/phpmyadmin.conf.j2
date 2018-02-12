@@ -1,5 +1,5 @@
 {{ ansible_managed | comment }}
-Alias /{{ phpmyadmin_httpd_directory }} "/usr/share/webapps/phpMyAdmin"
+Alias /{{ phpmyadmin_httpd_context }} "/usr/share/webapps/phpMyAdmin"
 <Directory "/usr/share/webapps/phpMyAdmin">
     DirectoryIndex index.php
     AllowOverride All
