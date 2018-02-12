@@ -46,4 +46,3 @@ galaxy_info:
 dependencies:
   - robertdebock.php
   - robertdebock.httpd
-  - robertdebock.mysql
