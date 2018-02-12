@@ -31,9 +31,7 @@ phpmyadmin_httpd_group:
 
 phpmyadmin_requirements:
   Archlinux:
-    - php-mbstring
-    - php-mysql
-    - php-zip
+    - []
   Alpine:
     - php7-mbstring
     - php7-pdo_mysql
