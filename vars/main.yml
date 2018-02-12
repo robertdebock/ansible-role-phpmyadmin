@@ -35,7 +35,7 @@ phpmyadmin_requirements:
     - php-mbstring
     - php-pecl-zip
 
-phpmyadmin_httpd_directory:
+phpmyadmin_httpd_conf_directory:
   Alpine: /etc/apache2/conf.d
   Archlinux: /etc/httpd/conf/extra
   CentOS: /etc/httpd/conf.d
