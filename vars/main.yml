@@ -30,8 +30,7 @@ phpmyadmin_httpd_group:
   Ubuntu: www-data
 
 phpmyadmin_requirements:
-  Archlinux:
-    - []
+  Archlinux: []
   Alpine:
     - php7-mbstring
     - php7-pdo_mysql
