@@ -28,3 +28,27 @@ phpmyadmin_httpd_group:
   Fedora: apache
   openSUSE Leap: www
   Ubuntu: www-data
+---
+# vars file for mysql
+phpmyadmin_requirements:
+  default:
+    - php-mysql
+    - php-mbstring
+    - php-pecl-zip
+
+phpmyadmin_httpd_directory:
+  Alpine: /etc/apache2/conf.d
+  Archlinux: /etc/httpd/conf/extra
+  CentOS: /etc/httpd/conf.d
+  Debian: /etc/apache2/conf-enabled
+  Fedora: /etc/httpd/conf.d
+  openSUSE Leap: /etc/apache2/conf.d
+  Ubuntu: /etc/apache2/conf-enabled
+
+phpmyadmin_httpd_services:
+  Debian:
+    - apache2
+  default:
+    - httpd
+  Ubuntu:
+    - apache2

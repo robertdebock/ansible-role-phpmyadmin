@@ -15,3 +15,5 @@ phpmyadmin_database_pass: root
 
 phpmyadmin_database_compress: false
 phpmyadmin_database_allownopassword: false
+
+phpmyadmin_httpd_directory: phpmyadmin

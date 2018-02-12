@@ -22,3 +22,18 @@
     owner: "{{ phpmyadmin_httpd_user[ansible_distribution] }}"
     group: "{{ phpmyadmin_httpd_group[ansible_distribution] }}"
     mode: 0640
+
+- name: install requirements
+  package:
+    name: "{{ item }}"
+  with_items:
+    - "{{ phpmyadmin_requirements[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
+      | default(phpmyadmin_requirements[ansible_distribution]
+      | default(phpmyadmin_requirements['default'] )) }}"
+
+- name: configure httpd
+  template:
+    src: templates/phpmyadmin.conf.j2
+    dest: "{{ httpd_directory[ansible_distribution] }}/phpmyadmin.conf"
+  notify:
+    - restart httpd
