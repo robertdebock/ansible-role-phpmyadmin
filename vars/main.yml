@@ -45,12 +45,15 @@ phpmyadmin_requirements:
     - php-mysql
     - php-mbstring
     - php-pecl-zip
+  Debian-8:
+    - php5-mysql
+    - php-pclzip
   Debian:
     - php-mysql
     - php-mbstring
     - php-zip
   Fedora:
-    - php-mysql
+    - php-mysqlnd
     - php-mbstring
     - php-pecl-zip
   OpenSUSE Leap:
