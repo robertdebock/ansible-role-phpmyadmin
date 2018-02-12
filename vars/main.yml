@@ -30,7 +30,7 @@ phpmyadmin_httpd_group:
   Ubuntu: www-data
 
 phpmyadmin_requirements:
-  ArchLinux:
+  Archlinux:
     - php-mbstring
     - php-mysql
     - php-zip
@@ -56,7 +56,7 @@ phpmyadmin_requirements:
     - php-mysqlnd
     - php-mbstring
     - php-pecl-zip
-  OpenSUSE Leap:
+  openSUSE Leap:
     - php5-mysql
     - php5-mbstring
     - php5-zip
