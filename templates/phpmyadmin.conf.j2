@@ -1,8 +1,0 @@
-{{ ansible_managed | comment }}
-Alias /{{ phpmyadmin_httpd_context }} "/usr/share/webapps/phpMyAdmin"
-<Directory "/usr/share/webapps/phpMyAdmin">
-    DirectoryIndex index.php
-    AllowOverride All
-    Options FollowSymlinks
-    Require all granted
-</Directory>

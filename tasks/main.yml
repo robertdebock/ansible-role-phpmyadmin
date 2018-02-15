@@ -30,10 +30,3 @@
     - "{{ phpmyadmin_requirements[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
       | default(phpmyadmin_requirements[ansible_distribution]
       | default(phpmyadmin_requirements['default'] )) }}"
-
-- name: configure httpd
-  template:
-    src: templates/phpmyadmin.conf.j2
-    dest: "{{ phpmyadmin_httpd_conf_directory[ansible_distribution] }}/phpmyadmin.conf"
-  notify:
-    - restart httpd
