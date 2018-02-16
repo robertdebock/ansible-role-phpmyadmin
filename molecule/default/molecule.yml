@@ -14,8 +14,6 @@ platforms:
     image: alpine:3.6
   - name: phpmyadmin-alpine-3.7
     image: alpine:3.7
-  - name: phpmyadmin-centos-7
-    image: centos:7
   - name: phpmyadmin-debian-buster
     image: debian:buster
   - name: phpmyadmin-debian-jessie
