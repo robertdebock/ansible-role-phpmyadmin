@@ -1,7 +1,7 @@
 {{ ansible_managed | comment('cblock') }}
 <?php
 {% if phpmyadmin_blowfish_secret is defined %}
-$cfg['blowfish_secret'] = '{{ phpmyadmin_blowfish_secret }}'
+$cfg['blowfish_secret'] = '{{ phpmyadmin_blowfish_secret }}';
 {% endif %}
 
 $i = 0;
