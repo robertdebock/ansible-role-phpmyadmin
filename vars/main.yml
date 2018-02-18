@@ -63,9 +63,6 @@ phpmyadmin_httpd_group:
   Ubuntu: www-data
 
 phpmyadmin_httpd_services:
-  Debian:
-    - apache2
-  default:
-    - httpd
-  Ubuntu:
-    - apache2
+  Debian: apache2
+  default: httpd
+  Ubuntu: apache2
