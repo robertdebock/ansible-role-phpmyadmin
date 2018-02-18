@@ -2,33 +2,6 @@
 # vars file for phpmyadmin
 phpmyadmin_archive: https://files.phpmyadmin.net/phpMyAdmin/{{ phpmyadmin_version }}/phpMyAdmin-{{ phpmyadmin_version }}-all-languages.tar.gz
 
-phpmyadmin_httpd_directory:
-  Alpine: /var/www/localhost/htdocs
-  Archlinux: /srv/http
-  CentOS: /var/www/html
-  Debian: /var/www/html
-  Fedora: /var/www/html
-  openSUSE Leap: /srv/www/htdocs
-  Ubuntu: /var/www/html
-
-phpmyadmin_httpd_user:
-  Alpine: apache
-  Archlinux: http
-  CentOS: apache
-  Debian: www-data
-  Fedora: apache
-  openSUSE Leap: wwwrun
-  Ubuntu: www-data
-
-phpmyadmin_httpd_group:
-  Alpine: apache
-  Archlinux: http
-  CentOS: apache
-  Debian: www-data
-  Fedora: apache
-  openSUSE Leap: www
-  Ubuntu: www-data
-
 phpmyadmin_requirements:
   Archlinux: []
   Alpine:
@@ -61,3 +34,38 @@ phpmyadmin_requirements:
     - php-mysql
     - php-mbstring
     - php-zip
+
+phpmyadmin_httpd_directory:
+  Alpine: /var/www/localhost/htdocs
+  Archlinux: /srv/http
+  CentOS: /var/www/html
+  Debian: /var/www/html
+  Fedora: /var/www/html
+  openSUSE Leap: /srv/www/htdocs
+  Ubuntu: /var/www/html
+
+phpmyadmin_httpd_user:
+  Alpine: apache
+  Archlinux: http
+  CentOS: apache
+  Debian: www-data
+  Fedora: apache
+  openSUSE Leap: wwwrun
+  Ubuntu: www-data
+
+phpmyadmin_httpd_group:
+  Alpine: apache
+  Archlinux: http
+  CentOS: apache
+  Debian: www-data
+  Fedora: apache
+  openSUSE Leap: www
+  Ubuntu: www-data
+
+phpmyadmin_httpd_services:
+  Debian:
+    - apache2
+  default:
+    - httpd
+  Ubuntu:
+    - apache2
