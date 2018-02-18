@@ -7,6 +7,6 @@
   when:
     - ansible_virtualization_type != "docker"
   with_items:
-    - "{{ zabbix_httpd_services[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
-      | default(zabbix_httpd_services[ansible_distribution]
-      | default(zabbix_httpd_services['default'] )) }}"
+    - "{{ phpmyadmin_httpd_services[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
+      | default(phpmyadmin_httpd_services[ansible_distribution]
+      | default(phpmyadmin_httpd_services['default'] )) }}"
