@@ -40,5 +40,5 @@ galaxy_info:
     - Ubuntu
 
 dependencies:
-  - robertdebock.php
-  - robertdebock.httpd
+  - role: robertdebock.httpd
+  - role: robertdebock.php
