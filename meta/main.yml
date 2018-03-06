@@ -39,6 +39,4 @@ galaxy_info:
     - RHEL
     - Ubuntu
 
-dependencies:
-  - role: robertdebock.httpd
-  - role: robertdebock.php
+dependencies: []

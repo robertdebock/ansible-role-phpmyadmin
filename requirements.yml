@@ -1,4 +1,4 @@
 ---
-- src: robertdebock.php
-- src: robertdebock.httpd
-- src: robertdebock.mysql
+- robertdebock.php
+- robertdebock.httpd
+- robertdebock.mysql

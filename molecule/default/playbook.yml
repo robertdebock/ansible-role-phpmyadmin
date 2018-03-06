@@ -5,4 +5,8 @@
   strategy: free
 
   roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.httpd
+    - role: robertdebock.php
+    - role: robertdebock.mysql
     - role: ansible-role-phpmyadmin
