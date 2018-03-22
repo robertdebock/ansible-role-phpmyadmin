@@ -10,10 +10,6 @@ lint:
 platforms:
   - name: phpmyadmin-archlinux
     image: base/archlinux
-  - name: phpmyadmin-alpine-3.6
-    image: alpine:3.6
-  - name: phpmyadmin-alpine-3.7
-    image: alpine:3.7
   - name: phpmyadmin-debian-buster
     image: debian:buster
   - name: phpmyadmin-debian-sid

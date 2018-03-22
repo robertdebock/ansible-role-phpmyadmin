@@ -4,10 +4,6 @@ phpmyadmin_archive: https://files.phpmyadmin.net/phpMyAdmin/{{ phpmyadmin_versio
 
 phpmyadmin_requirements:
   Archlinux: []
-  Alpine:
-    - php7-mbstring
-    - php7-pdo_mysql
-    - php7-zip
   CentOS-6:
     - php-mysql
     - php-mbstring
@@ -36,7 +32,6 @@ phpmyadmin_requirements:
     - php-zip
 
 phpmyadmin_httpd_directory:
-  Alpine: /var/www/localhost/htdocs
   Archlinux: /srv/http
   CentOS: /var/www/html
   Debian: /var/www/html
@@ -45,7 +40,6 @@ phpmyadmin_httpd_directory:
   Ubuntu: /var/www/html
 
 phpmyadmin_httpd_user:
-  Alpine: apache
   Archlinux: http
   CentOS: apache
   Debian: www-data
@@ -54,7 +48,6 @@ phpmyadmin_httpd_user:
   Ubuntu: www-data
 
 phpmyadmin_httpd_group:
-  Alpine: apache
   Archlinux: http
   CentOS: apache
   Debian: www-data
