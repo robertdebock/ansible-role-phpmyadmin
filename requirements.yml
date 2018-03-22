@@ -1,5 +1,9 @@
 ---
 - robertdebock.bootstrap
-- robertdebock.php
+- robertdebock.buildtools
+- robertdebock.epel
+- robertdebock.scl
+- robertdebock.python-pip
 - robertdebock.httpd
+- robertdebock.php
 - robertdebock.mysql
