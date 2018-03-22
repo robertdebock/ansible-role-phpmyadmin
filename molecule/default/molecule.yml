@@ -16,8 +16,6 @@ platforms:
     image: alpine:3.7
   - name: phpmyadmin-debian-buster
     image: debian:buster
-  - name: phpmyadmin-debian-jessie
-    image: debian:jessie
   - name: phpmyadmin-debian-sid
     image: debian:sid
   - name: phpmyadmin-debian-stretch
