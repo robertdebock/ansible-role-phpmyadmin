@@ -4,8 +4,30 @@ language: python
 services: docker
 
 env:
-  - ansible_version=">=2.4,<2.5"
-  - ansible_version=">=2.5,<2.6"
+  - ansible_version=">=2.4,<2.5" distribution=archlinux
+  - ansible_version=">=2.5,<2.6" distribution=archlinux
+  - ansible_version=">=2.4,<2.5" distribution=debian-sid
+  - ansible_version=">=2.5,<2.6" distribution=debian-sid
+  - ansible_version=">=2.4,<2.5" distribution=debian-stretch
+  - ansible_version=">=2.5,<2.6" distribution=debian-stretch
+  - ansible_version=">=2.4,<2.5" distribution=fedora-23
+  - ansible_version=">=2.5,<2.6" distribution=fedora-23
+  - ansible_version=">=2.4,<2.5" distribution=fedora-24
+  - ansible_version=">=2.5,<2.6" distribution=fedora-24
+  - ansible_version=">=2.4,<2.5" distribution=fedora-25
+  - ansible_version=">=2.5,<2.6" distribution=fedora-25
+  - ansible_version=">=2.4,<2.5" distribution=fedora-26
+  - ansible_version=">=2.5,<2.6" distribution=fedora-26
+  - ansible_version=">=2.4,<2.5" distribution=fedora-27
+  - ansible_version=">=2.5,<2.6" distribution=fedora-27
+  - ansible_version=">=2.4,<2.5" distribution=opensuse-42.2
+  - ansible_version=">=2.5,<2.6" distribution=opensuse-42.2
+  - ansible_version=">=2.4,<2.5" distribution=opensuse-42.3
+  - ansible_version=">=2.5,<2.6" distribution=opensuse-42.3
+  - ansible_version=">=2.4,<2.5" distribution=ubuntu-xenial
+  - ansible_version=">=2.5,<2.6" distribution=ubuntu-xenial
+  - ansible_version=">=2.4,<2.5" distribution=ubuntu-artful
+  - ansible_version=">=2.5,<2.6" distribution=ubuntu-artful
 
 cache:
   - pip
@@ -13,7 +35,7 @@ cache:
 install:
   - pip install --upgrade pip
   - pip install ansible"${ansible_version}"
-  - pip install molecule
+  - pip install molecule --scenario-name "${distribution}"
   - pip install docker-py
 
 script:
