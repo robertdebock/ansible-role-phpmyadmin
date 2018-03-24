@@ -4,42 +4,42 @@ language: python
 services: docker
 
 env:
-  - ansible_version=">=2.4,<2.5" distribution=archlinux
-  - ansible_version=">=2.5,<2.6" distribution=archlinux
-  - ansible_version=">=2.4,<2.5" distribution=debian-sid
-  - ansible_version=">=2.5,<2.6" distribution=debian-sid
-  - ansible_version=">=2.4,<2.5" distribution=debian-stretch
-  - ansible_version=">=2.5,<2.6" distribution=debian-stretch
-  - ansible_version=">=2.4,<2.5" distribution=fedora-23
-  - ansible_version=">=2.5,<2.6" distribution=fedora-23
-  - ansible_version=">=2.4,<2.5" distribution=fedora-24
-  - ansible_version=">=2.5,<2.6" distribution=fedora-24
-  - ansible_version=">=2.4,<2.5" distribution=fedora-25
-  - ansible_version=">=2.5,<2.6" distribution=fedora-25
-  - ansible_version=">=2.4,<2.5" distribution=fedora-26
-  - ansible_version=">=2.5,<2.6" distribution=fedora-26
-  - ansible_version=">=2.4,<2.5" distribution=fedora-27
-  - ansible_version=">=2.5,<2.6" distribution=fedora-27
-  - ansible_version=">=2.4,<2.5" distribution=opensuse-42.2
-  - ansible_version=">=2.5,<2.6" distribution=opensuse-42.2
-  - ansible_version=">=2.4,<2.5" distribution=opensuse-42.3
-  - ansible_version=">=2.5,<2.6" distribution=opensuse-42.3
-  - ansible_version=">=2.4,<2.5" distribution=ubuntu-xenial
-  - ansible_version=">=2.5,<2.6" distribution=ubuntu-xenial
-  - ansible_version=">=2.4,<2.5" distribution=ubuntu-artful
-  - ansible_version=">=2.5,<2.6" distribution=ubuntu-artful
+  - version=">=2.4,<2.5" distro=archlinux
+  - version=">=2.5,<2.6" distro=archlinux
+  - version=">=2.4,<2.5" distro=debian-sid
+  - version=">=2.5,<2.6" distro=debian-sid
+  - version=">=2.4,<2.5" distro=debian-stretch
+  - version=">=2.5,<2.6" distro=debian-stretch
+  - version=">=2.4,<2.5" distro=fedora-23
+  - version=">=2.5,<2.6" distro=fedora-23
+  - version=">=2.4,<2.5" distro=fedora-24
+  - version=">=2.5,<2.6" distro=fedora-24
+  - version=">=2.4,<2.5" distro=fedora-25
+  - version=">=2.5,<2.6" distro=fedora-25
+  - version=">=2.4,<2.5" distro=fedora-26
+  - version=">=2.5,<2.6" distro=fedora-26
+  - version=">=2.4,<2.5" distro=fedora-27
+  - version=">=2.5,<2.6" distro=fedora-27
+  - version=">=2.4,<2.5" distro=opensuse-42.2
+  - version=">=2.5,<2.6" distro=opensuse-42.2
+  - version=">=2.4,<2.5" distro=opensuse-42.3
+  - version=">=2.5,<2.6" distro=opensuse-42.3
+  - version=">=2.4,<2.5" distro=ubuntu-xenial
+  - version=">=2.5,<2.6" distro=ubuntu-xenial
+  - version=">=2.4,<2.5" distro=ubuntu-artful
+  - version=">=2.5,<2.6" distro=ubuntu-artful
 
 cache:
   - pip
 
 install:
   - pip install --upgrade pip
-  - pip install ansible"${ansible_version}"
+  - pip install ansible"${version}"
   - pip install molecule
   - pip install docker-py
 
 script:
-  - molecule test --scenario-name "${distribution}"
+  - molecule test --scenario-name "${distro}"
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
