@@ -35,11 +35,11 @@ cache:
 install:
   - pip install --upgrade pip
   - pip install ansible"${ansible_version}"
-  - pip install molecule --scenario-name "${distribution}"
+  - pip install molecule
   - pip install docker-py
 
 script:
-  - molecule test
+  - molecule test --scenario-name "${distribution}"
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
