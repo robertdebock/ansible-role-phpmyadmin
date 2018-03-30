@@ -44,18 +44,18 @@ This role has been tested against the following distributions and Ansible versio
 
 |distribution|ansible 2.3|ansible 2.4|ansible 2.5|
 |------------|-----------|-----------|-----------|
-|distro=archlinux|yes|yes|yes|
-|distro=debian-sid|yes|yes|yes|
-|distro=debian-stretch|yes|yes|yes|
-|distro=fedora-23|yes|yes|yes|
-|distro=fedora-24|yes|yes|yes|
-|distro=fedora-25|yes|yes|yes|
-|distro=fedora-26|yes|yes|yes|
-|distro=fedora-27|yes|yes|yes|
-|distro=opensuse-42.2|yes|yes|yes|
-|distro=opensuse-42.3|yes|yes|yes|
-|distro=ubuntu-artful|yes|yes|yes|
-|distro=ubuntu-xenial|yes|yes|yes|
+|archlinux|no|yes|yes|
+|debian-sid|no|yes|yes|
+|debian-stretch|no|yes|yes|
+|fedora-23|no|yes|yes|
+|fedora-24|no|yes|yes|
+|fedora-25|no|yes|yes|
+|fedora-26|no|yes|yes|
+|fedora-27|no|yes|yes|
+|opensuse-42.2|no|yes|yes|
+|opensuse-42.3|no|yes|yes|
+|ubuntu-artful|no|yes|yes|
+|ubuntu-xenial|no|yes|yes|
 
 Example Playbook
 ----------------
