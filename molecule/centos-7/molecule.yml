@@ -8,14 +8,14 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: phpmyadmin-fedora-23
-    image: fedora:23
+  - name: phpmyadmin-centos-7
+    image: centos:7
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
 scenario:
-  name: fedora-23
+  name: centos-7
   test_sequence:
     - lint
     - destroy
