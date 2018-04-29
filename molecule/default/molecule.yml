@@ -30,10 +30,10 @@ platforms:
     image: opensuse:42.2
   - name: phpmyadmin-opensuse-42.3
     image: opensuse:42.3
-  - name: phpmyadmin-ubuntu-xenial
-    image: ubuntu:xenial
   - name: phpmyadmin-ubuntu-artful
     image: ubuntu:artful
+  - name: phpmyadmin-ubuntu-bionic
+    image: ubuntu:bionic
 provisioner:
   name: ansible
   lint:
@@ -49,7 +49,7 @@ scenario:
     - prepare
     - converge
     - idempotence
-#    - check
+    - check
     - side_effect
     - verify
     - destroy
