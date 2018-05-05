@@ -17,7 +17,7 @@
 
 - name: configure software
   template:
-    src: templates/config.inc.php.j2
+    src: config.inc.php.j2
     dest: "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin/config.inc.php"
     owner: "{{ phpmyadmin_httpd_user[ansible_distribution] }}"
     group: "{{ phpmyadmin_httpd_group[ansible_distribution] }}"
