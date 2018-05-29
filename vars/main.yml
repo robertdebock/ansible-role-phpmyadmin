@@ -54,8 +54,3 @@ phpmyadmin_httpd_group:
   Fedora: apache
   openSUSE Leap: www
   Ubuntu: www-data
-
-phpmyadmin_httpd_service:
-  Debian: apache2
-  default: httpd
-  Ubuntu: apache2
