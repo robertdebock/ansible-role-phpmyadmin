@@ -27,10 +27,14 @@ Dependencies
 
 These are suggested roles to prepare your system.
 
-- robertdebock.bootstrap
-- robertdebock.httpd
-- robertdebock.mysql
-- robertdebock.php
+- [robertdebock.bootstrap](https://galaxy.ansible.com/robertdebock/bootstrap/)
+- [robertdebock.buildtools](https://galaxy.ansible.com/robertdebock/buildtools/)
+- [robertdebock.epel](https://galaxy.ansible.com/robertdebock/epel/)
+- [robertdebock.httpd](https://galaxy.ansible.com/robertdebock/httpd/)
+- [robertdebock.mysql](https://galaxy.ansible.com/robertdebock/mysql/)
+- [robertdebock.php](https://galaxy.ansible.com/robertdebock/php/)
+- [robertdebock.python-pip](https://galaxy.ansible.com/robertdebock/python-pip/)
+- [robertdebock.scl](https://galaxy.ansible.com/robertdebock/scl/)
 
 Download the dependencies by issuing this command:
 ```
@@ -66,6 +70,10 @@ Example Playbook
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.epel
+    - role: robertdebock.buildtools
+    - role: robertdebock.scl
+    - role: robertdebock.python-pip
     - role: robertdebock.httpd
     - role: robertdebock.php
     - role: robertdebock.mysql
@@ -82,4 +90,4 @@ Apache License, Version 2.0
 Author Information
 ------------------
 
-Robert de Bock <robert@meinit.nl>
+[Robert de Bock](https://robertdebock.nl/) <robert@meinit.nl>
