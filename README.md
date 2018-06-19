@@ -20,7 +20,15 @@ Access to a repository containing packages, likely on the internet. PHP, Apache 
 Role Variables
 --------------
 
-None known
+Default values can be found in default/main.yml.
+
+- phpmyadmin_version
+- phpmyadmin_database_host
+- phpmyadmin_blowfish_secret
+- phpmyadmin_database_user
+- phpmyadmin_database_pass
+- phpmyadmin_database_compress
+- phpmyadmin_database_allownopassword
 
 Dependencies
 ------------
