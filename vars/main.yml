@@ -26,6 +26,10 @@ phpmyadmin_requirements:
     - php5-mysql
     - php5-mbstring
     - php5-zip
+  openSUSE Tumbleweed:
+    - php5-mysql
+    - php5-mbstring
+    - php5-zip
   Ubuntu:
     - php-mysql
     - php-mbstring
@@ -37,6 +41,7 @@ phpmyadmin_httpd_directory:
   Debian: /var/www/html
   Fedora: /var/www/html
   openSUSE Leap: /srv/www/htdocs
+  openSUSE Tumbleweed: /srv/www/htdocs
   Ubuntu: /var/www/html
 
 phpmyadmin_httpd_user:
@@ -45,6 +50,7 @@ phpmyadmin_httpd_user:
   Debian: www-data
   Fedora: apache
   openSUSE Leap: wwwrun
+  openSUSE Tumbleweed: wwwrun
   Ubuntu: www-data
 
 phpmyadmin_httpd_group:
@@ -53,4 +59,5 @@ phpmyadmin_httpd_group:
   Debian: www-data
   Fedora: apache
   openSUSE Leap: www
+  openSUSE Tumbleweed: www
   Ubuntu: www-data
