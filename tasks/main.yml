@@ -1,34 +1,43 @@
 ---
 # tasks file for phpmyadmin
+- name: load default variables
+  include_vars:
+    file: default.yml
+
+- name: load os-specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+    - "{{ ansible_distribution }}.yml"
+    - default.yml
+
 - name: create directory
   file:
-    path: "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin"
+    path: "{{ phpmyadmin_httpd_directory }}/phpmyadmin"
     state: directory
-    owner: "{{ phpmyadmin_httpd_user[ansible_distribution] }}"
-    group: "{{ phpmyadmin_httpd_group[ansible_distribution] }}"
+    owner: "{{ phpmyadmin_httpd_user }}"
+    group: "{{ phpmyadmin_httpd_group }}"
     mode: 0750
 
 - name: download and unpack software
   unarchive:
     src: "{{ phpmyadmin_archive }}"
-    dest: "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin/"
+    dest: "{{ phpmyadmin_httpd_directory }}/phpmyadmin/"
     remote_src: true
     extra_opts: ['--strip-components=1']
 
 - name: configure software
   template:
     src: config.inc.php.j2
-    dest: "{{ phpmyadmin_httpd_directory[ansible_distribution] }}/phpmyadmin/config.inc.php"
-    owner: "{{ phpmyadmin_httpd_user[ansible_distribution] }}"
-    group: "{{ phpmyadmin_httpd_group[ansible_distribution] }}"
+    dest: "{{ phpmyadmin_httpd_directory }}/phpmyadmin/config.inc.php"
+    owner: "{{ phpmyadmin_httpd_user }}"
+    group: "{{ phpmyadmin_httpd_group }}"
     mode: 0640
 
 - name: install requirements
   package:
     name: "{{ item }}"
   with_items:
-    - "{{ phpmyadmin_requirements[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
-      | default(phpmyadmin_requirements[ansible_distribution]
-      | default(phpmyadmin_requirements['default'] )) }}"
+    - "{{ phpmyadmin_requirements }}"
   notify:
     - restart httpd

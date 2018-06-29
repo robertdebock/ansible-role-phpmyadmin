@@ -1,0 +1,5 @@
+---
+# vars file for phpmyadmin
+phpmyadmin_requirements:
+  - php-mysql
+  - php-mbstring

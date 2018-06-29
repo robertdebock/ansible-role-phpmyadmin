@@ -1,0 +1,12 @@
+---
+# vars file for phpmyadmin
+phpmyadmin_requirements:
+  - php-mysql
+  - php-mbstring
+  - php-zip
+
+phpmyadmin_httpd_directory: /var/www/html
+
+phpmyadmin_httpd_user: www-data
+
+phpmyadmin_httpd_group: www-data
