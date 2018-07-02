@@ -32,9 +32,9 @@ galaxy_info:
     - php
     - installer
     - package
-    - Alpine
-    - Debian
-    - Fedora
-    - Ubuntu
+    - alpine
+    - debian
+    - fedora
+    - ubuntu
 
 dependencies: []
