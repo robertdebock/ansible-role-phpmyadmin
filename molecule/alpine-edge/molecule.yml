@@ -8,14 +8,14 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: phpmyadmin-opensuse-42.2
-    image: opensuse:42.2
+  - name: phpmyadmin-alpine-edge
+    image: alpine:3.6
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
 scenario:
-  name: opensuse-42.2
+  name: alpine-edge
 verifier:
   name: goss
   lint:
