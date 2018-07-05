@@ -41,7 +41,7 @@ These are suggested roles to prepare your system.
 - [robertdebock.httpd](https://galaxy.ansible.com/robertdebock/httpd/)
 - [robertdebock.mysql](https://galaxy.ansible.com/robertdebock/mysql/)
 - [robertdebock.php](https://galaxy.ansible.com/robertdebock/php/)
-- [robertdebock.python-pip](https://galaxy.ansible.com/robertdebock/python-pip/)
+- [robertdebock.python_pip](https://galaxy.ansible.com/robertdebock/python_pip/)
 - [robertdebock.scl](https://galaxy.ansible.com/robertdebock/scl/)
 
 Download the dependencies by issuing this command:
@@ -81,7 +81,7 @@ Example Playbook
     - role: robertdebock.epel
     - role: robertdebock.buildtools
     - role: robertdebock.scl
-    - role: robertdebock.python-pip
+    - role: robertdebock.python_pip
     - role: robertdebock.httpd
     - role: robertdebock.php
     - role: robertdebock.mysql

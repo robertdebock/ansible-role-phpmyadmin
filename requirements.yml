@@ -3,7 +3,7 @@
 - robertdebock.buildtools
 - robertdebock.epel
 - robertdebock.scl
-- robertdebock.python-pip
+- robertdebock.python_pip
 - robertdebock.httpd
 - robertdebock.php
 - robertdebock.mysql

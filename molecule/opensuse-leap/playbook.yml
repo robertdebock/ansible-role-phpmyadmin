@@ -8,7 +8,7 @@
     - role: robertdebock.buildtools
     - role: robertdebock.epel
     - role: robertdebock.scl
-    - role: robertdebock.python-pip
+    - role: robertdebock.python_pip
       python_pip_modules:
         - name: pyopenssl
     - role: robertdebock.httpd
