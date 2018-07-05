@@ -1,9 +1,9 @@
 ---
 # vars file for phpmyadmin
 phpmyadmin_requirements:
-  - php5-mysql
-  - php5-mbstring
-  - php5-zip
+  - php-mysql
+  - php-mbstring
+  - php-zip
 
 phpmyadmin_httpd_directory: /srv/www/htdocs
 
