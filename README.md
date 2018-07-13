@@ -1,9 +1,9 @@
-hp
+phpmyadmin
 =========
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-php.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-php)
 
-Provides PHP for your system.
+Provides PHPMyAdmin for your system.
 
 Context
 --------
@@ -36,13 +36,11 @@ Dependencies
 These are suggested roles to prepare your system.
 
 - [robertdebock.bootstrap](https://galaxy.ansible.com/robertdebock/bootstrap/)
-- [robertdebock.buildtools](https://galaxy.ansible.com/robertdebock/buildtools/)
 - [robertdebock.epel](https://galaxy.ansible.com/robertdebock/epel/)
 - [robertdebock.httpd](https://galaxy.ansible.com/robertdebock/httpd/)
 - [robertdebock.mysql](https://galaxy.ansible.com/robertdebock/mysql/)
 - [robertdebock.php](https://galaxy.ansible.com/robertdebock/php/)
 - [robertdebock.python_pip](https://galaxy.ansible.com/robertdebock/python_pip/)
-- [robertdebock.scl](https://galaxy.ansible.com/robertdebock/scl/)
 
 Download the dependencies by issuing this command:
 ```
@@ -54,21 +52,21 @@ Compatibility
 
 This role has been tested against the following distributions and Ansible version:
 
-|distribution|ansible 2.3|ansible 2.4|ansible 2.5|
+|distribution|ansible 2.4|ansible 2.5|ansible 2.6|
 |------------|-----------|-----------|-----------|
-|alpine-latest|no|no|no|
 |alpine-edge|no|no|no|
-|archlinux|no|yes|yes|
+|alpine-latest|no|no|no|
+|archlinux|yes|yes|yes|
 |centos-6|no|no|no|
 |centos-latest|no|no|no|
-|debian-stable|no|yes|yes|
-|debian-latest|no|yes|yes|
-|fedora-latest|no|yes|yes|
-|fedora-rawhide|no|yes|yes|
-|opensuse-leap|no|yes|yes|
-|opensuse-tumbleweed|no|yes|yes|
-|ubuntu-artful|no|yes|yes|
-|ubuntu-latest|no|yes|yes|
+|debian-latest|yes|yes|yes|
+|debian-stable|yes|yes|yes|
+|fedora-latest|yes|yes|yes|
+|fedora-rawhide|yes|yes|yes|
+|opensuse-leap|yes|yes|yes|
+|opensuse-tumbleweed|yes|yes|yes|
+|ubuntu-artful|yes|yes|yes|
+|ubuntu-latest|yes|yes|yes|
 
 Example Playbook
 ----------------
@@ -79,8 +77,6 @@ Example Playbook
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.epel
-    - role: robertdebock.buildtools
-    - role: robertdebock.scl
     - role: robertdebock.python_pip
     - role: robertdebock.httpd
     - role: robertdebock.php
