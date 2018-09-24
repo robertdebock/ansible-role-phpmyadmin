@@ -37,6 +37,7 @@
 - name: install requirements
   package:
     name: "{{ item }}"
+    state: present
   with_items:
     - "{{ phpmyadmin_requirements }}"
   notify:
