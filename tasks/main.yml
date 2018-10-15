@@ -2,7 +2,9 @@
 # tasks file for phpmyadmin
 - name: create directory
   file:
-    path: "{{ phpmyadmin_httpd_directory }}/phpmyadmin"
+    path: "{{ phpmyadmin_httpd_directory[ansible_distribution]
+          | default(phpmyadmin_httpd_directory['default']) }}
+          /phpmyadmin"
     state: directory
     owner: "{{ phpmyadmin_httpd_user }}"
     group: "{{ phpmyadmin_httpd_group }}"
@@ -11,14 +13,18 @@
 - name: download and unpack software
   unarchive:
     src: "{{ phpmyadmin_archive }}"
-    dest: "{{ phpmyadmin_httpd_directory[ansible_distribution] | default(phpmyadmin_httpd_directory['default']) }}/phpmyadmin/"
+    dest: "{{ phpmyadmin_httpd_directory[ansible_distribution]
+          | default(phpmyadmin_httpd_directory['default']) }}
+          /phpmyadmin/"
     remote_src: true
     extra_opts: ['--strip-components=1']
 
 - name: configure software
   template:
     src: config.inc.php.j2
-    dest: "{{ phpmyadmin_httpd_directory[ansible_distribution] | default(phpmyadmin_httpd_directory['default']) }}/phpmyadmin/config.inc.php"
+    dest: "{{ phpmyadmin_httpd_directory[ansible_distribution]
+          | default(phpmyadmin_httpd_directory['default']) }}
+          /phpmyadmin/config.inc.php"
     owner: "{{ phpmyadmin_httpd_user[ansible_distribution] | default(phpmyadmin_httpd_user['default']) }}"
     group: "{{ phpmyadmin_httpd_group[ansible_distribution] | default(phpmyadmin_httpd_group['default']) }}"
     mode: 0640
