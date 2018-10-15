@@ -3,17 +3,18 @@
 phpmyadmin_archive: https://files.phpmyadmin.net/phpMyAdmin/{{ phpmyadmin_version }}/phpMyAdmin-{{ phpmyadmin_version }}-all-languages.tar.gz
 
 phpmyadmin_requirements:
+  default:
+    - php-mysql
+    - php-mbstring
+    - php-pecl-zip
   Archlinux: []
   CentOS-6:
     - php-mysql
     - php-mbstring
-  CentOS-7:
+  CentOS:
     - php-mysql
     - php-mbstring
     - php-pecl-zip
-  Debian-8:
-    - php5-mysql
-    - php-pclzip
   Debian:
     - php-mysql
     - php-mbstring
@@ -22,42 +23,37 @@ phpmyadmin_requirements:
     - php-mysqlnd
     - php-mbstring
     - php-pecl-zip
+  Ubuntu:
+    - php-mysql
+    - php-mbstring
+    - php-zip
   openSUSE Leap:
     - php5-mysql
     - php5-mbstring
     - php5-zip
   openSUSE Tumbleweed:
-    - php5-mysql
-    - php5-mbstring
-    - php5-zip
-  Ubuntu:
     - php-mysql
     - php-mbstring
     - php-zip
 
 phpmyadmin_httpd_directory:
+  default: /var/www/html
   Archlinux: /srv/http
-  CentOS: /var/www/html
-  Debian: /var/www/html
-  Fedora: /var/www/html
   openSUSE Leap: /srv/www/htdocs
   openSUSE Tumbleweed: /srv/www/htdocs
-  Ubuntu: /var/www/html
 
 phpmyadmin_httpd_user:
+  default: apache
   Archlinux: http
-  CentOS: apache
   Debian: www-data
-  Fedora: apache
+  Ubuntu: www-data
   openSUSE Leap: wwwrun
   openSUSE Tumbleweed: wwwrun
-  Ubuntu: www-data
 
 phpmyadmin_httpd_group:
+  default: apache
   Archlinux: http
-  CentOS: apache
   Debian: www-data
-  Fedora: apache
+  Ubuntu: www-data
   openSUSE Leap: www
   openSUSE Tumbleweed: www
-  Ubuntu: www-data

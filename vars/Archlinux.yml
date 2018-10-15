@@ -1,9 +1,0 @@
----
-# vars file for phpmyadmin
-phpmyadmin_requirements: []
-
-phpmyadmin_httpd_directory: /srv/http
-
-phpmyadmin_httpd_user: http
-
-phpmyadmin_httpd_group: http
