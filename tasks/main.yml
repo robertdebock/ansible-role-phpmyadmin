@@ -8,7 +8,7 @@
     state: directory
     owner: "{{ phpmyadmin_httpd_user[ansible_distribution]
            | default(phpmyadmin_httpd_user['default']) }}"
-    group: "{{ phpmyadmin_httpd_group[ansible_distibuion]
+    group: "{{ phpmyadmin_httpd_group[ansible_distribution]
            | default(phpmyadmin_httpd_group['default']) }}"
     mode: 0750
 
@@ -35,7 +35,7 @@
 
 - name: install requirements
   package:
-    name: "{{ phpmyadmin_requirements[ansible_distribution ~ '-' ~ ansible_distribution_major_version
+    name: "{{ phpmyadmin_requirements[ansible_distribution ~ '-' ~ ansible_distribution_major_version]
           | default(phpmyadmin_requirements[ansible_distribution]
           | default(phpmyadmin_requirements['default'])) }}"
     state: "{{ phpmyadmin_package_state }}"
