@@ -6,8 +6,10 @@
           | default(phpmyadmin_httpd_directory['default']) }}
           /phpmyadmin"
     state: directory
-    owner: "{{ phpmyadmin_httpd_user }}"
-    group: "{{ phpmyadmin_httpd_group }}"
+    owner: "{{ phpmyadmin_httpd_user[ansible_distribution]
+           | default(phpmyadmin_httpd_user['default']) }}"
+    group: "{{ phpmyadmin_httpd_group[ansible_distibuion]
+           | default(phpmyadmin_httpd_group['default']) }}"
     mode: 0750
 
 - name: download and unpack software
@@ -25,8 +27,10 @@
     dest: "{{ phpmyadmin_httpd_directory[ansible_distribution]
           | default(phpmyadmin_httpd_directory['default']) }}
           /phpmyadmin/config.inc.php"
-    owner: "{{ phpmyadmin_httpd_user[ansible_distribution] | default(phpmyadmin_httpd_user['default']) }}"
-    group: "{{ phpmyadmin_httpd_group[ansible_distribution] | default(phpmyadmin_httpd_group['default']) }}"
+    owner: "{{ phpmyadmin_httpd_user[ansible_distribution]
+           | default(phpmyadmin_httpd_user['default']) }}"
+    group: "{{ phpmyadmin_httpd_group[ansible_distribution]
+           | default(phpmyadmin_httpd_group['default']) }}"
     mode: 0640
 
 - name: install requirements
