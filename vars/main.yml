@@ -3,11 +3,12 @@
 phpmyadmin_archive: https://files.phpmyadmin.net/phpMyAdmin/{{ phpmyadmin_version }}/phpMyAdmin-{{ phpmyadmin_version }}-all-languages.tar.gz
 
 phpmyadmin_requirements:
-  default:
+  Alpine:
     - php-mysql
     - php-mbstring
     - php-pecl-zip
-  Archlinux: []
+  Archlinux:
+    - php
   CentOS-6:
     - php-mysql
     - php-mbstring
