@@ -29,9 +29,9 @@ phpmyadmin_requirements:
     - php-mbstring
     - php-zip
   openSUSE Leap:
-    - php5-mysql
-    - php5-mbstring
-    - php5-zip
+    - php7-mysql
+    - php7-mbstring
+    - php7-zip
   openSUSE Tumbleweed:
     - php-mysql
     - php-mbstring
