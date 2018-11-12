@@ -18,7 +18,7 @@
 - name: configure software
   template:
     src: config.inc.php.j2
-    dest: "{{ phpmyadmin_httpd_directory }}y/phpmyadmin/config.inc.php"
+    dest: "{{ phpmyadmin_httpd_directory }}/phpmyadmin/config.inc.php"
     owner: "{{ phpmyadmin_httpd_user }}"
     group: "{{ phpmyadmin_httpd_group }}"
     mode: 0640
