@@ -1,7 +1,10 @@
 ---
 # defaults file for phpmyadmin
-phpmyadmin_version: 4.7.7
 
+# The version of PHPMyAdmin to install
+phpmyadmin_version: 4.8.3
+
+# Where to connect to for the database.
 phpmyadmin_database_host: localhost
 
 # To authenticate to the database using a user/pass requested in the browser,

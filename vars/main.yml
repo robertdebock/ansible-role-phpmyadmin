@@ -2,7 +2,35 @@
 # vars file for phpmyadmin
 phpmyadmin_archive: https://files.phpmyadmin.net/phpMyAdmin/{{ phpmyadmin_version }}/phpMyAdmin-{{ phpmyadmin_version }}-all-languages.tar.gz
 
-phpmyadmin_requirements:
+_phpmyadmin_httpd_directory:
+  default: /var/www/html
+  Archlinux: /srv/http
+  openSUSE Leap: /srv/www/htdocs
+  openSUSE Tumbleweed: /srv/www/htdocs
+
+phpmyadmin_httpd_directory: "{{ _phpmyadmin_httpd_directory[ansible_distribution] | default(_phpmyadmin_httpd_directory['default']) }}"
+
+_phpmyadmin_httpd_user:
+  default: apache
+  Archlinux: http
+  Debian: www-data
+  Ubuntu: www-data
+  openSUSE Leap: wwwrun
+  openSUSE Tumbleweed: wwwrun
+
+phpmyadmin_httpd_user: "{{ _phpmyadmin_httpd_user[ansible_distribution] | default(_phpmyadmin_httpd_user['default']) }}"
+
+_phpmyadmin_httpd_group:
+  default: apache
+  Archlinux: http
+  Debian: www-data
+  Ubuntu: www-data
+  openSUSE Leap: www
+  openSUSE Tumbleweed: www
+
+phpmyadmin_httpd_group: "{{ _phpmyadmin_httpd_group[ansible_distribution] | default(_phpmyadmin_httpd_group['default']) }}"
+
+_phpmyadmin_requirements:
   Alpine:
     - php-mysql
     - php-mbstring
@@ -37,24 +65,4 @@ phpmyadmin_requirements:
     - php-mbstring
     - php-zip
 
-phpmyadmin_httpd_directory:
-  default: /var/www/html
-  Archlinux: /srv/http
-  openSUSE Leap: /srv/www/htdocs
-  openSUSE Tumbleweed: /srv/www/htdocs
-
-phpmyadmin_httpd_user:
-  default: apache
-  Archlinux: http
-  Debian: www-data
-  Ubuntu: www-data
-  openSUSE Leap: wwwrun
-  openSUSE Tumbleweed: wwwrun
-
-phpmyadmin_httpd_group:
-  default: apache
-  Archlinux: http
-  Debian: www-data
-  Ubuntu: www-data
-  openSUSE Leap: www
-  openSUSE Tumbleweed: www
+phpmyadmin_requirements: "{{ _phpmyadmin_requirements[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_phpmyadmin_requirements[ansible_distribution] | default(omit)) }}"

@@ -3,14 +3,15 @@
   hosts: all
   gather_facts: "false"
 
+  vars:
+    python_pip_modules:
+      - name: pyopenssl
+
   roles:
-    - role: robertdebock.bootstrap
-    - role: robertdebock.buildtools
-    - role: robertdebock.epel
-    - role: robertdebock.python_pip
-      python_pip_modules:
-        - name: pyopenssl
-    - role: robertdebock.httpd
-    - role: robertdebock.php
-    - role: robertdebock.mysql
-    - role: ansible-role-phpmyadmin
+    - robertdebock.bootstrap
+    - robertdebock.buildtools
+    - robertdebock.python_pip
+    - robertdebock.httpd
+    - robertdebock.php
+    - robertdebock.mysql
+    - ansible-role-phpmyadmin

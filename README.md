@@ -1,63 +1,93 @@
 phpmyadmin
 =========
 
-[![Build Status](https://travis-ci.org/robertdebock/ansible-role-php.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-php)
+[![Build Status](https://travis-ci.org/robertdebock/ansible-role-phpmyadmin.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-phpmyadmin)
 
-Provides PHPMyAdmin for your system.
+The purpose of this role is to install and configure phpmyadmin on your system.
 
-[Unit tests](https://travis-ci.org/robertdebock/ansible-role-phpmyadmin) are done on every commit and periodically.
+Example Playbook
+----------------
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-phpmyadmin/issues)
-
-To test this role locally please use [Molecule](https://github.com/metacloud/molecule):
+This example is taken from `molecule/default/playbook.yml`:
 ```
-pip install molecule
-molecule test
+---
+- name: Converge
+  hosts: all
+  gather_facts: "false"
+
+  vars:
+    python_pip_modules:
+      - name: pyopenssl
+
+  roles:
+    - robertdebock.bootstrap
+    - robertdebock.buildtools
+    - robertdebock.epel
+    - robertdebock.python_pip
+    - robertdebock.httpd
+    - robertdebock.php
+    - robertdebock.mysql
+    - robertdebock.phpmyadmin
+
 ```
-There are many scenarios available, please have a look in the `molecule/` directory.
+
+Role Variables
+--------------
+
+These variables are set in `defaults/main.yml`:
+```
+---
+# defaults file for phpmyadmin
+
+# The version of PHPMyAdmin to install
+phpmyadmin_version: 4.8.3
+
+# Where to connect to for the database.
+phpmyadmin_database_host: localhost
+
+# To authenticate to the database using a user/pass requested in the browser,
+# ensure you set phpmyadmin_blowfish_secret.
+phpmyadmin_blowfish_secret: x7GD9DBEE32bAWd2sTHKBfYiqOfnj82neaPD3wrDTs0K
+
+# Only set these (and unset phpmyadmin_blowfish_secret) to save the login
+# credentials in the configuration file.
+phpmyadmin_database_user: root
+phpmyadmin_database_pass: root
+
+phpmyadmin_database_compress: false
+phpmyadmin_database_allownopassword: false
+
+# To update all packages installed by this roles, set `phpmyadmin_package_state` to `latest`.
+phpmyadmin_package_state: present
+
+```
+
+Requirements
+------------
+
+- Access to a repository containing packages, likely on the internet.
+- A recent version of Ansible. (Tests run on the last 3 release of Ansible.)
+
+The following roles can be installed to ensure all requirements are met, using `ansible-galaxy install -r requirements.yml`:
+
+---
+- robertdebock.bootstrap
+- robertdebock.buildtools
+- robertdebock.epel
+- robertdebock.python_pip
+- robertdebock.httpd
+- robertdebock.php
+- robertdebock.mysql
+
 
 Context
---------
+-------
+
 This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://robertdebock.nl/) for further information.
 
 Here is an overview of related roles:
 ![dependencies](https://raw.githubusercontent.com/robertdebock/drawings/artifacts/phpmyadmin.png "Dependency")
 
-Requirements
-------------
-
-Access to a repository containing packages, likely on the internet. PHP, Apache HTTPD and MySQL should be available.
-
-Role Variables
---------------
-
-Default values can be found in default/main.yml.
-
-- phpmyadmin_version
-- phpmyadmin_database_host
-- phpmyadmin_blowfish_secret
-- phpmyadmin_database_user
-- phpmyadmin_database_pass
-- phpmyadmin_database_compress
-- phpmyadmin_database_allownopassword
-
-Dependencies
-------------
-
-These are suggested roles to prepare your system.
-
-- [robertdebock.bootstrap](https://galaxy.ansible.com/robertdebock/bootstrap/)
-- [robertdebock.buildtools](https://galaxy.ansible.com/robertdebock/buildtools/)
-- [robertdebock.epel](https://galaxy.ansible.com/robertdebock/epel/)
-- [robertdebock.httpd](https://galaxy.ansible.com/robertdebock/httpd/)
-- [robertdebock.mysql](https://galaxy.ansible.com/robertdebock/mysql/)
-- [robertdebock.php](https://galaxy.ansible.com/robertdebock/php/)
-- [robertdebock.python_pip](https://galaxy.ansible.com/robertdebock/python_pip/)
-
-Download the dependencies by issuing this command:
-```
-ansible-galaxy install --role-file requirements.yml
-```
 
 Compatibility
 -------------
@@ -84,28 +114,26 @@ This role has been tested against the following distributions and Ansible versio
 
 A single star means the build may fail, it's marked as an experimental build.
 
-Example Playbook
-----------------
+Testing
+-------
 
+[Unit tests](https://travis-ci.org/robertdebock/ansible-role-phpmyadmin) are done on every commit and periodically.
+
+If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-phpmyadmin/issues)
+
+To test this role locally please use [Molecule](https://github.com/metacloud/molecule):
 ```
-- hosts: servers
-
-  roles:
-    - role: robertdebock.bootstrap
-    - role: robertdebock.epel
-    - role: robertdebock.python_pip
-    - role: robertdebock.httpd
-    - role: robertdebock.php
-    - role: robertdebock.mysql
-    - role: robertdebock.phpmyadmin
+pip install molecule
+molecule test
 ```
+There are many specific scenarios available, please have a look in the `molecule/` directory.
 
-Install this role using `galaxy install robertdebock.phpmyadmin`.
 
 License
 -------
 
-Apache License, Version 2.0
+Apache-2.0
+
 
 Author Information
 ------------------
