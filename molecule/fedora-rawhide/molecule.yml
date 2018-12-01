@@ -20,6 +20,9 @@ provisioner:
     defaults:
       callback_plugins: /usr/lib/python2.7/site-packages/ara/plugins/callbacks
   inventory:
+    host_vars:
+      phpmyadmin-fedora-rawhide:
+        ansible_python_interpreter: /usr/bin/python3
     group_vars:
       all:
         httpd_ignore_docker: no
