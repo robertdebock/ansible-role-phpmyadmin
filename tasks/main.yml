@@ -12,7 +12,7 @@
   unarchive:
     src: "{{ phpmyadmin_archive }}"
     dest: "{{ phpmyadmin_httpd_directory }}/phpmyadmin/"
-    remote_src: true
+    remote_src: yes
     extra_opts: ['--strip-components=1']
 
 - name: configure software
