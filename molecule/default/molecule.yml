@@ -32,8 +32,6 @@ platforms:
     image: fedora:rawhide
   - name: phpmyadmin-opensuse-leap
     image: opensuse:leap
-  - name: phpmyadmin-opensuse-tumbleweed
-    image: opensuse:tumbleweed
   - name: phpmyadmin-ubuntu-latest
     image: ubuntu:latest
   - name: phpmyadmin-ubuntu-rolling
