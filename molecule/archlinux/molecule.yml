@@ -24,7 +24,3 @@ provisioner:
         mysql_ignore_docker: no
 scenario:
   name: archlinux
-verifier:
-  name: goss
-  lint:
-    name: yamllint
