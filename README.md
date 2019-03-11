@@ -28,7 +28,6 @@ This example is taken from `molecule/default/playbook.yml`:
     - robertdebock.php
     - robertdebock.mysql
     - robertdebock.phpmyadmin
-
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -61,7 +60,6 @@ phpmyadmin_database_allownopassword: false
 
 # To update all packages installed by this roles, set `phpmyadmin_package_state` to `latest`.
 phpmyadmin_package_state: present
-
 ```
 
 Requirements
@@ -100,11 +98,11 @@ This role has been tested against the following distributions and Ansible versio
 
 |distribution|ansible 2.6|ansible 2.7|ansible devel|
 |------------|-----------|-----------|-------------|
-|alpine-edge*|yes|yes|yes*|
-|alpine-latest|no|no|yes*|
+|alpine-edge*|no|no|no*|
+|alpine-latest|no|no|no*|
 |archlinux|yes|yes|yes*|
-|centos-6|no|no|yes*|
-|centos-latest|no|no|yes*|
+|centos-6|no|no|no*|
+|centos-latest|yes|yes|yes*|
 |debian-latest|yes|yes|yes*|
 |debian-stable|yes|yes|yes*|
 |debian-unstable*|yes|yes|yes*|
