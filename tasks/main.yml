@@ -26,7 +26,7 @@
 - name: install requirements
   package:
     name: "{{ phpmyadmin_requirements }}"
-    state: "{{ phpmyadmin_package_state }}"
+    state: present
   notify:
     - restart httpd
   register: phpmyadmin_install_requirements

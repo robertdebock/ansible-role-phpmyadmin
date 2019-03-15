@@ -18,6 +18,3 @@ phpmyadmin_database_pass: root
 
 phpmyadmin_database_compress: false
 phpmyadmin_database_allownopassword: false
-
-# To update all packages installed by this roles, set `phpmyadmin_package_state` to `latest`.
-phpmyadmin_package_state: present
