@@ -1,7 +1,7 @@
 ---
-- name: Converge
+- name: Prepare
   hosts: all
-  gather_facts: "false"
+  gather_facts: "no"
 
   vars:
     python_pip_modules:
@@ -15,4 +15,3 @@
     - robertdebock.httpd
     - robertdebock.php
     - robertdebock.mysql
-    - ansible-role-phpmyadmin

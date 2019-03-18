@@ -13,7 +13,19 @@ This example is taken from `molecule/default/playbook.yml`:
 ---
 - name: Converge
   hosts: all
-  gather_facts: "false"
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - robertdebock.phpmyadmin
+```
+
+The machine you are running this on, may need to be prepared. Tests have been done on machines prepared by this playbook:
+```yaml
+---
+- name: Prepare
+  hosts: all
+  gather_facts: "no"
 
   vars:
     python_pip_modules:
@@ -27,7 +39,6 @@ This example is taken from `molecule/default/playbook.yml`:
     - robertdebock.httpd
     - robertdebock.php
     - robertdebock.mysql
-    - robertdebock.phpmyadmin
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
