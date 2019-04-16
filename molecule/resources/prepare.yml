@@ -1,7 +1,8 @@
 ---
 - name: Prepare
   hosts: all
-  gather_facts: "no"
+  gather_facts: no
+  become: yes
 
   vars:
     python_pip_modules:
