@@ -30,5 +30,5 @@
   notify:
     - restart httpd
   register: phpmyadmin_install_requirements
-  until: phpmyadmin_install_requirements
+  until: phpmyadmin_install_requirements is succeeded
   retries: 3
