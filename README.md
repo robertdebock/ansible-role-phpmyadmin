@@ -42,7 +42,7 @@ The machine you are running this on, may need to be prepared.
     - role: robertdebock.mysql
     - role: robertdebock.remi
       remi_enabled_repositories:
-        - php74
+        - php73
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
