@@ -56,7 +56,7 @@ These variables are set in `defaults/main.yml`:
 # defaults file for phpmyadmin
 
 # The version of PHPMyAdmin to install
-phpmyadmin_version: 4.8.3
+phpmyadmin_version: 4.9.0.1
 
 # Where to connect to for the database.
 phpmyadmin_database_host: localhost
