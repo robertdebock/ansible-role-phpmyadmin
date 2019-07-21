@@ -12,8 +12,8 @@
       python_pip_modules:
         - name: pyopenssl
     - role: robertdebock.httpd
-    - role: robertdebock.php
     - role: robertdebock.mysql
     - role: robertdebock.remi
       remi_enabled_repositories:
         - php73
+    - role: robertdebock.php

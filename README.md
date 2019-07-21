@@ -38,11 +38,11 @@ The machine you are running this on, may need to be prepared.
       python_pip_modules:
         - name: pyopenssl
     - role: robertdebock.httpd
-    - role: robertdebock.php
     - role: robertdebock.mysql
     - role: robertdebock.remi
       remi_enabled_repositories:
         - php73
+    - role: robertdebock.php
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
