@@ -35,6 +35,7 @@ The machine you are running this on, may need to be prepared.
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.core_dependencies
     - role: robertdebock.buildtools
     - role: robertdebock.epel
     - role: robertdebock.python_pip
@@ -89,6 +90,7 @@ The following roles can be installed to ensure all requirements are met, using `
 ---
 - robertdebock.bootstrap
 - robertdebock.buildtools
+- robertdebock.core_dependencies
 - robertdebock.epel
 - robertdebock.python_pip
 - robertdebock.httpd
@@ -126,8 +128,8 @@ This role has been tested against the following distributions and Ansible versio
 |alpine-edge*|no|no|no*|
 |alpine-latest|no|no|no*|
 |archlinux|yes|yes|yes*|
-|centos-7|no|no|no*|
-|centos-latest|yes|yes|yes*|
+|centos-7|yes|yes|yes*|
+|centos-latest|no|no|yes*|
 |debian-stable|yes|yes|yes*|
 |debian-unstable*|yes|yes|yes*|
 |fedora-latest|yes|yes|yes*|
@@ -139,6 +141,15 @@ This role has been tested against the following distributions and Ansible versio
 
 A single star means the build may fail, it's marked as an experimental build.
 
+Exceptions
+----------
+
+Some variarations of the build matrix do not work. These are the variations and reasons why the build won't work:
+
+| variation                 | reason                 |
+|---------------------------|------------------------|
+| Alpine | php-pecl-zip (missing) |
+| CentOS 8 | Mysql role fails. |
 
 Included version(s)
 -------------------

@@ -1,0 +1,6 @@
+---
+exceptions:
+  - variation: Alpine
+    reason: php-pecl-zip (missing)
+  - variation: CentOS 8
+    reason: Mysql role fails.
