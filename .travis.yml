@@ -15,8 +15,6 @@ env:
     - image="debian" tag="stable"
     - image="debian" tag="unstable"
     - image="debian"
-    - image="centos"
-    - image="redhat"
     - image="fedora"
     - image="fedora" tag="rawhide"
     - image="opensuse"
