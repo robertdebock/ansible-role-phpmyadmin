@@ -32,9 +32,6 @@ _phpmyadmin_requirements:
     - php-pecl-zip
   Archlinux:
     - php
-  CentOS-6:
-    - php-mysql
-    - php-mbstring
   CentOS:
     - php-mysql
     - php-mbstring
