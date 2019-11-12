@@ -113,8 +113,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 |container|tag|allow_failures|
 |---------|---|--------------|
-|amazonlinux|1|no|
-|amazonlinux|latest|no|
 |debian|unstable|yes|
 |debian|latest|no|
 |fedora|latest|no|
@@ -136,7 +134,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 | variation                 | reason                 |
 |---------------------------|------------------------|
 | Alpine | php-pecl-zip (missing) |
-| CentOS 8 | Mysql role fails. |
+| amazonlinux | Dependency (python_pip) not available |
 
 Included version(s)
 -------------------
