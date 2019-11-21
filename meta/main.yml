@@ -32,7 +32,6 @@ galaxy_info:
     - php
     - installer
     - package
-    - fedora
     - ubuntu
 
 dependencies:
