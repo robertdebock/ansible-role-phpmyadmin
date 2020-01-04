@@ -4,14 +4,12 @@ phpmyadmin_archive: https://files.phpmyadmin.net/phpMyAdmin/{{ phpmyadmin_versio
 
 _phpmyadmin_httpd_directory:
   default: /var/www/html
-  Archlinux: /srv/http
   Suse: /srv/www/htdocs
 
 phpmyadmin_httpd_directory: "{{ _phpmyadmin_httpd_directory[ansible_os_family] | default(_phpmyadmin_httpd_directory['default']) }}"
 
 _phpmyadmin_httpd_user:
   default: apache
-  Archlinux: http
   Debian: www-data
   Suse: wwwrun
 
@@ -19,7 +17,6 @@ phpmyadmin_httpd_user: "{{ _phpmyadmin_httpd_user[ansible_os_family] | default(_
 
 _phpmyadmin_httpd_group:
   default: apache
-  Archlinux: http
   Debian: www-data
   Suse: www
 
@@ -30,8 +27,6 @@ _phpmyadmin_requirements:
     - php-mysql
     - php-mbstring
     - php-pecl-zip
-  Archlinux:
-    - php
   CentOS:
     - php-mysql
     - php-mbstring
