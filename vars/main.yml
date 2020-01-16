@@ -27,8 +27,12 @@ _phpmyadmin_requirements:
     - php-mysql
     - php-mbstring
     - php-pecl-zip
-  CentOS:
+  CentOS-7:
     - php-mysql
+    - php-mbstring
+    - php-pecl-zip
+  CentOS:
+    - php-mysqlnd
     - php-mbstring
     - php-pecl-zip
   Debian:
