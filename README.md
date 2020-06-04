@@ -2,9 +2,9 @@
 
 Install and configure phpmyadmin on your system.
 
-|Travis|GitHub|Quality|Downloads|
-|------|------|-------|---------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-phpmyadmin.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-phpmyadmin)|[![github](https://github.com/robertdebock/ansible-role-phpmyadmin/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-phpmyadmin/actions)|[![quality](https://img.shields.io/ansible/quality/23499)](https://galaxy.ansible.com/robertdebock/phpmyadmin)|[![downloads](https://img.shields.io/ansible/role/d/23499)](https://galaxy.ansible.com/robertdebock/phpmyadmin)|
+|Travis|GitHub|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-phpmyadmin.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-phpmyadmin)|[![github](https://github.com/robertdebock/ansible-role-phpmyadmin/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-phpmyadmin/actions)|[![quality](https://img.shields.io/ansible/quality/23499)](https://galaxy.ansible.com/robertdebock/phpmyadmin)|[![downloads](https://img.shields.io/ansible/role/d/23499)](https://galaxy.ansible.com/robertdebock/phpmyadmin)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-phpmyadmin.svg)](https://github.com/robertdebock/ansible-role-phpmyadmin/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -101,12 +101,12 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.buildtools
 - robertdebock.core_dependencies
 - robertdebock.epel
-- robertdebock.python_pip
 - robertdebock.httpd
-- robertdebock.php
 - robertdebock.mysql
-- robertdebock.remi
 - robertdebock.openssl
+- robertdebock.php
+- robertdebock.python_pip
+- robertdebock.remi
 
 ```
 
