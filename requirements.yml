@@ -3,9 +3,9 @@
 - robertdebock.buildtools
 - robertdebock.core_dependencies
 - robertdebock.epel
-- robertdebock.python_pip
 - robertdebock.httpd
-- robertdebock.php
 - robertdebock.mysql
-- robertdebock.remi
 - robertdebock.openssl
+- robertdebock.php
+- robertdebock.python_pip
+- robertdebock.remi
