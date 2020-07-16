@@ -17,9 +17,6 @@
     dest: "{{ phpmyadmin_httpd_directory }}/phpmyadmin/"
     remote_src: yes
     extra_opts: ['--strip-components=1']
-  register: phpmyadmin_download_and_unpack_software
-  until: phpmyadmin_download_and_unpack_software is succeeded
-  retries: 3
 
 - name: configure software
   template:
@@ -35,6 +32,3 @@
     state: present
   notify:
     - restart httpd
-  register: phpmyadmin_install_requirements
-  until: phpmyadmin_install_requirements is succeeded
-  retries: 3
