@@ -41,19 +41,19 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
           common_name: "{{ ansible_fqdn }}"
     - role: robertdebock.httpd
     - role: robertdebock.mysql
-    - role: robertdebock.remi
-      remi_enabled_repositories:
-        - php73
+    # - role: robertdebock.remi
+    #   remi_enabled_repositories:
+    #     - php73
     - role: robertdebock.php
 ```
 
-For verification `molecule/resources/verify.yml` run after the role has been applied.
+For verification `molecule/resources/verify.yml` runs after the role has been applied.
 ```yaml
 ---
 - name: Verify
   hosts: all
   become: yes
-  gather_facts: yes
+  gather_facts: no
 
   tasks:
     - name: check if connection still works
@@ -106,7 +106,7 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.openssl
 - robertdebock.php
 - robertdebock.python_pip
-- robertdebock.remi
+# - robertdebock.remi
 
 ```
 

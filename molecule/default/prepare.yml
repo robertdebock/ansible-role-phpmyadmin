@@ -16,7 +16,7 @@
           common_name: "{{ ansible_fqdn }}"
     - role: robertdebock.httpd
     - role: robertdebock.mysql
-    - role: robertdebock.remi
-      remi_enabled_repositories:
-        - php73
+    # - role: robertdebock.remi
+    #   remi_enabled_repositories:
+    #     - php73
     - role: robertdebock.php
