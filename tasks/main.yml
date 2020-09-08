@@ -9,7 +9,7 @@
     state: directory
     owner: "{{ phpmyadmin_httpd_user }}"
     group: "{{ phpmyadmin_httpd_group }}"
-    mode: "750"
+    mode: "755"
 
 - name: download and unpack software
   unarchive:
