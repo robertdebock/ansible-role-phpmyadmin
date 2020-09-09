@@ -3,6 +3,13 @@
 - name: include assert.yml
   include_tasks: assert.yml
 
+- name: install requirements
+  package:
+    name: "{{ phpmyadmin_requirements }}"
+    state: present
+  notify:
+    - restart httpd
+
 - name: create directory
   file:
     path: "{{ phpmyadmin_httpd_directory }}/phpmyadmin"
@@ -26,10 +33,3 @@
     owner: "{{ phpmyadmin_httpd_user }}"
     group: "{{ phpmyadmin_httpd_group }}"
     mode: "640"
-
-- name: install requirements
-  package:
-    name: "{{ phpmyadmin_requirements }}"
-    state: present
-  notify:
-    - restart httpd
