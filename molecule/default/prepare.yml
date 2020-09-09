@@ -17,4 +17,8 @@
     - role: robertdebock.selinux
     - role: robertdebock.httpd
     - role: robertdebock.mysql
+      mysql_users:
+        - name: admin
+          password: P@s5-W0rd
+          priv: "*.*:ALL"
     - role: robertdebock.php

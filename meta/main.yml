@@ -18,7 +18,6 @@ galaxy_info:
         - bullseye
     - name: Fedora
       versions:
-        - 31
         - 32
     - name: OpenSUSE
       versions:
@@ -27,7 +26,6 @@ galaxy_info:
       versions:
         - focal
         - bionic
-        - xenial
 
   galaxy_tags:
     - php

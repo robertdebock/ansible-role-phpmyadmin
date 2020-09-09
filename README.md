@@ -42,6 +42,10 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
     - role: robertdebock.selinux
     - role: robertdebock.httpd
     - role: robertdebock.mysql
+      mysql_users:
+        - name: admin
+          password: P@s5-W0rd
+          priv: "*.*:ALL"
     - role: robertdebock.php
 ```
 
@@ -79,8 +83,10 @@ phpmyadmin_blowfish_secret: x7GD9DBEE32bAWd2sTHKBfYiqOfnj82neaPD3wrDTs0K
 
 # Only set these (and unset phpmyadmin_blowfish_secret) to save the login
 # credentials in the configuration file.
-phpmyadmin_database_user: root
-phpmyadmin_database_pass: root
+# This role does not setup a MySQL user and/or password, it just uses these
+# settings.
+phpmyadmin_database_user: admin
+phpmyadmin_database_pass: P@s5-W0rd
 
 phpmyadmin_database_compress: no
 phpmyadmin_database_allownopassword: no
@@ -128,9 +134,9 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |---------|----|
 |el|7, 8|
 |debian|buster, bullseye|
-|fedora|31, 32|
+|fedora|32|
 |opensuse|all|
-|ubuntu|focal, bionic, xenial|
+|ubuntu|focal, bionic|
 
 The minimum version of Ansible required is 2.8 but tests have been done to:
 
