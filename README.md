@@ -39,11 +39,9 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
       openssl_items:
         - name: apache-httpd
           common_name: "{{ ansible_fqdn }}"
+    - role: robertdebock.selinux
     - role: robertdebock.httpd
     - role: robertdebock.mysql
-    # - role: robertdebock.remi
-    #   remi_enabled_repositories:
-    #     - php73
     - role: robertdebock.php
 ```
 
@@ -106,7 +104,7 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.openssl
 - robertdebock.php
 - robertdebock.python_pip
-# - robertdebock.remi
+- robertdebock.selinux
 
 ```
 
