@@ -38,12 +38,12 @@
   assert:
     that:
       - phpmyadmin_database_compress is defined
-      - phpmyadmin_database_compress | type_debug == "bool"
+      - phpmyadmin_database_compress is boolean
     quiet: yes
 
 - name: test if phpmyadmin_database_allownopassword is set correctly
   assert:
     that:
       - phpmyadmin_database_allownopassword is defined
-      - phpmyadmin_database_allownopassword | type_debug == "bool"
+      - phpmyadmin_database_allownopassword is boolean
     quiet: yes
