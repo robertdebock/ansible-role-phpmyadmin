@@ -1,4 +1,5 @@
 ---
+
 - name: test if phpmyadmin_version is set correctly
   assert:
     that:
