@@ -7,14 +7,14 @@
   delegate_to: localhost
 
 - name: install requirements
-  package:
+  ansible.builtin.package:
     name: "{{ phpmyadmin_requirements }}"
     state: present
   notify:
     - restart httpd
 
 - name: modify selinux settings
-  seboolean:
+  ansible.posix.seboolean:
     name: httpd_unified
     state: yes
     persistent: yes
@@ -23,7 +23,7 @@
     - ansible_selinux.status == "enabled"
 
 - name: create directory
-  file:
+  ansible.builtin.file:
     path: "{{ phpmyadmin_httpd_directory }}/phpmyadmin"
     state: directory
     owner: "{{ phpmyadmin_httpd_user }}"
@@ -31,7 +31,7 @@
     mode: "755"
 
 - name: download and unpack software
-  unarchive:
+  ansible.builtin.unarchive:
     src: "{{ phpmyadmin_archive }}"
     dest: "{{ phpmyadmin_httpd_directory }}/phpmyadmin/"
     remote_src: yes
@@ -39,7 +39,7 @@
     mode: "0755"
 
 - name: create directories
-  file:
+  ansible.builtin.file:
     path: "{{ phpmyadmin_httpd_directory }}/phpmyadmin/tmp"
     state: directory
     owner: "{{ phpmyadmin_httpd_user }}"
@@ -47,7 +47,7 @@
     mode: "0750"
 
 - name: configure software
-  template:
+  ansible.builtin.template:
     src: config.inc.php.j2
     dest: "{{ phpmyadmin_httpd_directory }}/phpmyadmin/config.inc.php"
     owner: "{{ phpmyadmin_httpd_user }}"
