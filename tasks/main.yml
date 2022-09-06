@@ -11,7 +11,7 @@
     name: "{{ phpmyadmin_requirements }}"
     state: present
   notify:
-    - restart httpd
+    - Restart httpd
 
 - name: Modify selinux settings
   ansible.posix.seboolean:
