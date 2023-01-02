@@ -30,4 +30,4 @@ galaxy_info:
     - package
 
 dependencies:
-  - robertdebock.httpd
+  - role: robertdebock.httpd

@@ -107,7 +107,7 @@ The following roles are used to prepare a system. You can prepare your system in
 
 Most roles require some kind of preparation, this is done in `molecule/default/prepare.yml`. This role has a "hard" dependency on the following roles:
 
-- robertdebock.httpd
+- {'role': 'robertdebock.httpd'}
 
 ## [Context](#context)
 
