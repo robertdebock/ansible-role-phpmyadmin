@@ -5,4 +5,4 @@
 repository:
   description: Install and configure phpmyadmin on your system.
   homepage: https://robertdebock.nl/
-  topics: php, installer, package, ansible, molecule, tox, playbook, hacktoberfest
+  topics: php, installer, package, ansible, molecule, tox, playbook
