@@ -5,6 +5,7 @@
     that:
       - phpmyadmin_version is defined
       - phpmyadmin_version is string
+      - phpmyadmin_version is not none
     quiet: yes
 
 - name: assert | Test if phpmyadmin_database_host is set correctly
@@ -12,6 +13,7 @@
     that:
       - phpmyadmin_database_host is defined
       - phpmyadmin_database_host is string
+      - phpmyadmin_database_host is not none
     quiet: yes
 
 - name: assert | Test if phpmyadmin_blowfish_secret is set correctly
@@ -19,6 +21,7 @@
     that:
       - phpmyadmin_blowfish_secret is defined
       - phpmyadmin_blowfish_secret is string
+      - phpmyadmin_blowfish_secret is not none
     quiet: yes
 
 - name: assert | Test if phpmyadmin_database_user is set correctly
@@ -26,6 +29,7 @@
     that:
       - phpmyadmin_database_user is defined
       - phpmyadmin_database_user is string
+      - phpmyadmin_database_user is not none
     quiet: yes
 
 - name: assert | Test if phpmyadmin_database_pass is set correctly
@@ -33,6 +37,7 @@
     that:
       - phpmyadmin_database_pass is defined
       - phpmyadmin_database_pass is string
+      - phpmyadmin_database_pass is not none
     quiet: yes
 
 - name: assert | Test if phpmyadmin_database_compress is set correctly
