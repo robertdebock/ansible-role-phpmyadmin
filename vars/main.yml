@@ -44,6 +44,7 @@ _phpmyadmin_requirements:
     - php-mysql
     - php-mbstring
     - php-zip
+    - php-xml
   Fedora:
     - php-json
     - php-mysqlnd
