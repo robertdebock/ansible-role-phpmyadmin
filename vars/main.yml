@@ -3,23 +3,17 @@
 
 phpmyadmin_archive: "https://files.phpmyadmin.net/phpMyAdmin/{{ phpmyadmin_version }}/phpMyAdmin-{{ phpmyadmin_version }}-all-languages.tar.gz"
 
-_phpmyadmin_httpd_directory:
-  default: /var/www/html
-  Suse: /srv/www/htdocs
-
-phpmyadmin_httpd_directory: "{{ _phpmyadmin_httpd_directory[ansible_os_family] | default(_phpmyadmin_httpd_directory['default']) }}"
+phpmyadmin_httpd_directory: /var/www/html
 
 _phpmyadmin_httpd_user:
   default: apache
   Debian: www-data
-  Suse: wwwrun
 
 phpmyadmin_httpd_user: "{{ _phpmyadmin_httpd_user[ansible_os_family] | default(_phpmyadmin_httpd_user['default']) }}"
 
 _phpmyadmin_httpd_group:
   default: apache
   Debian: www-data
-  Suse: www
 
 phpmyadmin_httpd_group: "{{ _phpmyadmin_httpd_group[ansible_os_family] | default(_phpmyadmin_httpd_group['default']) }}"
 
@@ -45,10 +39,5 @@ _phpmyadmin_requirements:
     - php-mbstring
     - php-zip
     - php-xml
-  openSUSE Leap:
-    - php7-json
-    - php7-mysql
-    - php7-mbstring
-    - php7-zip
 
-phpmyadmin_requirements: "{{ _phpmyadmin_requirements[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_phpmyadmin_requirements[ansible_os_family] | default(omit)) }}"
+phpmyadmin_requirements: "{{ _phpmyadmin_requirements[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_phpmyadmin_requirements[ansible_os_family] | default([])) }}"
