@@ -29,28 +29,17 @@ _phpmyadmin_requirements:
     - php-mysql
     - php-mbstring
     - php-pecl-zip
-  CentOS-7:
+  RedHat-7:
     - php-json
     - php-mysql
     - php-mbstring
     - php-pecl-zip
-  CentOS:
+  RedHat:
     - php-json
     - php-mysqlnd
     - php-mbstring
     - php-pecl-zip
   Debian:
-    - php-json
-    - php-mysql
-    - php-mbstring
-    - php-zip
-    - php-xml
-  Fedora:
-    - php-json
-    - php-mysqlnd
-    - php-mbstring
-    - php-pecl-zip
-  Ubuntu:
     - php-json
     - php-mysql
     - php-mbstring
@@ -62,4 +51,4 @@ _phpmyadmin_requirements:
     - php7-mbstring
     - php7-zip
 
-phpmyadmin_requirements: "{{ _phpmyadmin_requirements[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_phpmyadmin_requirements[ansible_distribution] | default(omit)) }}"
+phpmyadmin_requirements: "{{ _phpmyadmin_requirements[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_phpmyadmin_requirements[ansible_os_family] | default(omit)) }}"
