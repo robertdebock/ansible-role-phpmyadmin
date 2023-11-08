@@ -2,9 +2,9 @@
 
 Install and configure phpmyadmin on your system.
 
-|GitHub|GitLab|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![github](https://github.com/robertdebock/ansible-role-phpmyadmin/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-phpmyadmin/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-phpmyadmin/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-phpmyadmin)|[![quality](https://img.shields.io/ansible/quality/23499)](https://galaxy.ansible.com/robertdebock/phpmyadmin)|[![downloads](https://img.shields.io/ansible/role/d/23499)](https://galaxy.ansible.com/robertdebock/phpmyadmin)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-phpmyadmin.svg)](https://github.com/robertdebock/ansible-role-phpmyadmin/releases/)|
+|GitHub|GitLab|Downloads|Version|
+|------|------|---------|-------|
+|[![github](https://github.com/robertdebock/ansible-role-phpmyadmin/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-phpmyadmin/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-phpmyadmin/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-phpmyadmin)|[![downloads](https://img.shields.io/ansible/role/d/24565)](https://galaxy.ansible.com/robertdebock/phpmyadmin)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-phpmyadmin.svg)](https://github.com/robertdebock/ansible-role-phpmyadmin/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -133,7 +133,7 @@ The minimum version of Ansible required is 2.12, tests have been done to:
 - The current version.
 - The development version.
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-phpmyadmin/issues)
+If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-phpmyadmin/issues).
 
 ## [License](#license)
 
