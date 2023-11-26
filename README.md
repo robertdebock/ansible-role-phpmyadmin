@@ -1,4 +1,4 @@
-# Ansible role [phpmyadmin](#phpmyadmin)
+# [Ansible role phpmyadmin](#phpmyadmin)
 
 Install and configure phpmyadmin on your system.
 
