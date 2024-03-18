@@ -14,8 +14,8 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 ---
 - name: Converge
   hosts: all
-  become: yes
-  gather_facts: yes
+  become: true
+  gather_facts: true
 
   roles:
     - role: robertdebock.httpd
@@ -28,8 +28,8 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 ---
 - name: Prepare
   hosts: all
-  become: yes
-  gather_facts: no
+  become: true
+  gather_facts: false
 
   roles:
     - role: robertdebock.bootstrap
@@ -78,8 +78,8 @@ phpmyadmin_blowfish_secret: "x7GD9DBEE32bAWd2sTHKBfYiqOfnj82neaPD3wrDTs0K"
 phpmyadmin_database_user: admin
 phpmyadmin_database_pass: "P@s5-W0rd"
 
-phpmyadmin_database_compress: no
-phpmyadmin_database_allownopassword: no
+phpmyadmin_database_compress: false
+phpmyadmin_database_allownopassword: false
 ```
 
 ## [Requirements](#requirements)
