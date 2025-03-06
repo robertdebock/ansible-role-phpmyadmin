@@ -6,4 +6,4 @@
 
   roles:
     - role: robertdebock.httpd
-    - role: ansible-role-phpmyadmin
+    - role: robertdebock.phpmyadmin
