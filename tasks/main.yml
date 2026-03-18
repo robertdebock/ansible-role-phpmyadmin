@@ -20,8 +20,8 @@
     state: true
     persistent: true
   when:
-    - ansible_selinux.status is defined
-    - ansible_selinux.status == "enabled"
+    - ansible_facts['selinux'].status is defined
+    - ansible_facts['selinux'].status == "enabled"
 
 - name: Create directory
   ansible.builtin.file:
