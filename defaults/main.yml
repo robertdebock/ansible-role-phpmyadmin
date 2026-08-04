@@ -4,6 +4,9 @@
 # The version of PHPMyAdmin to install
 phpmyadmin_version: "5.2.1"
 
+# Enable the httpd service via the httpd role.
+phpmyadmin_enable_httpd: true
+
 # Where to connect to for the database.
 phpmyadmin_database_host: localhost
 

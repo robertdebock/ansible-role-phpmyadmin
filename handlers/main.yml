@@ -1,0 +1,6 @@
+---
+- name: Restart httpd
+  ansible.builtin.service:
+    name: httpd
+    state: restarted
+  when: phpmyadmin_enable_httpd | bool
