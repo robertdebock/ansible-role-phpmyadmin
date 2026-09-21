@@ -1,5 +1,5 @@
-{{ ansible_managed | comment('cblock') }}
 <?php
+{{ ansible_managed | comment('cblock') }}
 {% if phpmyadmin_blowfish_secret is defined %}
 $cfg['blowfish_secret'] = '{{ phpmyadmin_blowfish_secret }}';
 {% endif %}

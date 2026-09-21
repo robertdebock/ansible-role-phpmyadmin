@@ -6,6 +6,39 @@
 
   tasks:
     - name: Check if phpmyadmin can be reached
-      uri:
+      ansible.builtin.uri:
         url: "http://localhost/phpmyadmin/"
-        status_code: 200
+        return_content: true
+      register: phpmyadmin_index
+
+    - name: Read the generated configuration
+      ansible.builtin.slurp:
+        src: /var/www/html/phpmyadmin/config.inc.php
+      register: phpmyadmin_config
+
+    # Anything outside of the PHP tags is sent to the browser verbatim. Because
+    # config.inc.php is included on every request, a single byte of output here
+    # means the HTTP headers are already sent by the time phpMyAdmin wants to
+    # set them. Exports then lose their Content-Type and Content-Disposition
+    # headers and the browser shows plain text instead of downloading a file.
+    - name: Test that the configuration does not produce any output
+      ansible.builtin.assert:
+        that:
+          - phpmyadmin_config_content.startswith('<?php')
+          - "'?>' not in phpmyadmin_config_content"
+        fail_msg: >-
+          config.inc.php emits output before or after the PHP block, which
+          breaks the headers of phpMyAdmin exports.
+        quiet: true
+      vars:
+        phpmyadmin_config_content: "{{ phpmyadmin_config['content'] | b64decode }}"
+
+    - name: Test that phpmyadmin serves clean html
+      ansible.builtin.assert:
+        that:
+          - phpmyadmin_index.content.lower().startswith('<!doctype')
+          - "'Ansible managed' not in phpmyadmin_index.content"
+          - "'headers already sent' not in phpmyadmin_index.content"
+        fail_msg: >-
+          phpMyAdmin prefixes its responses with unexpected output.
+        quiet: true
