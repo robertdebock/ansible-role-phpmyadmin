@@ -85,6 +85,7 @@ phpmyadmin_database_allownopassword: false
 ## [Requirements](#requirements)
 
 - pip packages listed in [requirements.txt](https://github.com/robertdebock/ansible-role-phpmyadmin/blob/master/requirements.txt).
+- The `robertdebock.httpd` role must be installed manually. Set `phpmyadmin_enable_httpd: true` to enable the Apache installation.
 
 ## [State of used roles](#state-of-used-roles)
 
